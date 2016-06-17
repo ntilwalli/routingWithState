@@ -94,8 +94,6 @@ function main(sources) {
       })
       .remember()
 
-  sources.Router.history$.debug(`router history$`).addListener(noopListener)
-
   change$.imitate(component$.map(x => x.change$).flatten())
 
 	return {
