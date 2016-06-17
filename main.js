@@ -12,12 +12,12 @@ export const noopListener = {
   complete: noop
 }
 
-function parent(sources, inputs) {
+function root(sources, inputs) {
 
   return {
     DOM: inputs.props$.map(props => {
-      return div(`.parent`, [
-        div([`Parent`]),
+      return div(`.root`, [
+        div([`Root`]),
         div([`Current count: ${props.count}`]),
         div([a({props: {href: `/page1`}}, [`Go to page 1`])]),
         div([a({props: {href: `/page2`}}, [`Go to page 2`])])
@@ -42,10 +42,10 @@ function child(sources, inputs) {
   return {
     DOM: inputs.props$.map(props => inputs.parentState$.map(state => div(`.child`, [
       div([`${props.title}`]),
-      div([`current count: ${state.count}`]),
+      div([`Current count: ${state.count}`]),
       button(`.inc`, [`+`]),
       button(`.dec`, [`-`]),
-      div([a({props: {href: `/`}}, [`Back to parent`])])
+      div([a({props: {href: `/`}}, [`Back to root`])])
     ]))).flatten(),
     change$: actions.change$
   }
@@ -77,7 +77,7 @@ function main(sources) {
   const state$ = model({}, {change$})
 
   const routes = {
-    '/': () => parent(sources, {props$: state$}),
+    '/': () => root(sources, {props$: state$}),
     '/page1': () => child(sources, {props$: xs.of({title: `Child 1`}), parentState$: state$}),
     '/page2': () => child(sources, {props$: xs.of({title: `Child 2`}), parentState$: state$})
   }
