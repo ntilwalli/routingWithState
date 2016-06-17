@@ -78,8 +78,8 @@ function main(sources) {
 
   const routes = {
     '/': () => root(sources, {props$: state$}),
-    '/page1': () => child(sources, {props$: xs.of({title: `Child 1`}), parentState$: state$}),
-    '/page2': () => child(sources, {props$: xs.of({title: `Child 2`}), parentState$: state$})
+    '/page1': () => child(sources, {props$: xs.of({title: `Page 1`}), parentState$: state$}),
+    '/page2': () => child(sources, {props$: xs.of({title: `Page 2`}), parentState$: state$})
   }
 
   const component$ = sources.Router.define(routes)
