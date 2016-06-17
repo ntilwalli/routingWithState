@@ -3,7 +3,6 @@ import Cycle from '@cycle/xstream-run';
 import {div, label, button, input, hr, ul, li, a, makeDOMDriver} from '@cycle/dom';
 import {makeRouterDriver} from 'cyclic-router';
 import {createHistory} from 'history';
-import isolate from '@cycle/isolate'
 import Immutable from 'immutable'
 
 export function noop() {}
@@ -81,8 +80,8 @@ function main(sources) {
     '/': () => parent(sources, {props$: state$}),
     '/page1': () => child(sources, {props$: xs.of({title: `Child 1`}), parentState$: state$}),
     '/page2': () => child(sources, {props$: xs.of({title: `Child 2`}), parentState$: state$}),
-    '*': () => ({
-      DOM: xs.of(`Should not get here`),
+    '/*': () => ({
+      DOM: xs.of(`Invalid route`),
       change$: xs.never()
     })
   }
