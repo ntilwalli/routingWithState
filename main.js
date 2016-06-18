@@ -6,8 +6,8 @@ import {createHistory} from 'history';
 import Immutable from 'immutable'
 
 export function noop() {}
-export const noopListener = {
-  next: noop,
+export const consoleListener = {
+  next: x => console.log(x),
   error: noop,
   complete: noop
 }
@@ -91,6 +91,9 @@ function main(sources) {
       .remember()
 
   change$.imitate(component$.map(x => x.change$).flatten())
+
+
+  sources.Router.history$.debug(`from history$...`).addListener(consoleListener)
 
 	return {
 		DOM: component$
