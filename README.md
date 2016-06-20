@@ -7,4 +7,4 @@ Demonstrates CycleJS routing while sharing state from parent component with chil
 2. `npm install`
 3. `npm run build`
 4. `npm run serve`
-5. Open browser at http://localhost:9090
+5. Open browser at http://localhost:8080
