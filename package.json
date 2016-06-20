@@ -2,7 +2,7 @@
   "repository": {},
   "scripts": {
     "build": "rm -rf dist; mkdir dist; watchify -v -t babelify main.js -o dist/main.js",
-    "serve": "http-server -p 9090 -P http://127.0.0.1:9090"
+    "serve": "live-server --entry-file=index.html"  
   },
   "dependencies": {
     "@cycle/dom": "^10.0.0-rc34",
