@@ -9,7 +9,7 @@
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-adapter": "^3.0.2",
     "@cycle/xstream-run": "^3.0.1",
-    "cyclic-router": "^2.1.0",
+    "cyclic-router": "^2.1.1",
     "history": "^3.0.0",
     "immutable": "^3.8.1",
     "xstream": "^5.0.6"
