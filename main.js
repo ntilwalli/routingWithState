@@ -4,6 +4,7 @@ import {div, label, button, input, hr, ul, li, a, makeDOMDriver} from '@cycle/do
 import {makeRouterDriver} from 'cyclic-router';
 import {createHistory} from 'history';
 import Immutable from 'immutable'
+import switchPath from 'switch-path'
 
 export function noop() {}
 export const noopListener = {
@@ -102,7 +103,7 @@ function main(sources) {
 
 const drivers = {
 	DOM: makeDOMDriver('#app'),
-	Router: makeRouterDriver(createHistory(), {capture: true}),
+	Router: makeRouterDriver(createHistory(), switchPath, {capture: true}),
 };
 
 Cycle.run(main, drivers);

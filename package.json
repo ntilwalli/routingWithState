@@ -5,14 +5,15 @@
     "serve": "live-server --entry-file=index.html"  
   },
   "dependencies": {
-    "@cycle/dom": "^10.0.0-rc34",
-    "@cycle/isolate": "^1.4.0",
-    "@cycle/xstream-adapter": "^3.0.2",
-    "@cycle/xstream-run": "^3.0.1",
-    "cyclic-router": "^2.1.1",
+    "@cycle/dom": "*",
+    "@cycle/isolate": "*",
+    "@cycle/xstream-adapter": "*",
+    "@cycle/xstream-run": "*",
+    "cyclic-router": "*",
     "history": "^3.0.0",
-    "immutable": "^3.8.1",
-    "xstream": "^5.0.6"
+    "immutable": "*",
+    "xstream": "*",
+    "switch-path": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
